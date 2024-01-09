@@ -1,0 +1,2 @@
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+# com.heycine.slash.common.redis.config.RedissonAutoConfiguration

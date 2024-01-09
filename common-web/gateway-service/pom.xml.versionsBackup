@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>common-web</artifactId>
+        <groupId>com.heycine.slash.common</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>gateway-service</artifactId>
+    <name>gateway-service</name>
+
+    <dependencies>
+        <!-- basic-spring-boot-starter模块 -->
+        <dependency>
+            <groupId>com.heycine.slash.common</groupId>
+            <artifactId>basic-spring-boot-starter</artifactId>
+            <version>${project.parent.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- swagger-spring-boot-starter模块 -->
+        <dependency>
+            <groupId>com.heycine.slash.common</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <!-- monitor-spring-boot-starter模块 -->
+        <dependency>
+            <groupId>com.heycine.slash.common</groupId>
+            <artifactId>monitor-spring-boot-starter</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <!-- redis-spring-boot-starter模块 -->
+        <dependency>
+            <groupId>com.heycine.slash.common</groupId>
+            <artifactId>redis-spring-boot-starter</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <!-- SpringCloud Gateway Server -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+
+        <!-- Spring Security oauth2 -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-resource-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-jose</artifactId>
+        </dependency>
+        <!-- spring-cloud-loadbalancer -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-loadbalancer</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
+</project>

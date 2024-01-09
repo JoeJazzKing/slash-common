@@ -1,0 +1,49 @@
+# Tomcat
+server:
+  port: 9800
+  tomcat:
+    max-connections: 20000
+    threads:
+      max: 500
+
+# Spring
+spring:
+  application:
+    name: test-service
+  profiles:
+    active: local
+
+  # SpringCloud配置
+  cloud:
+    nacos:
+      # 注册中心
+      server-addr: http://localhost:8848
+      username: nacos
+      password: nacos
+      discovery:
+        namespace: ${spring.profiles.active}
+        group: Tope
+      # 配置中心
+      config:
+        namespace: ${spring.profiles.active}
+        group: Tope
+        prefix: ${spring.application.name}
+        file-extension: yml
+        refresh-enabled: true
+        # 共享配置
+        shared-configs:
+          - dataId: application.common.${spring.cloud.nacos.config.file-extension}
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - dataId: monitor.common.${spring.cloud.nacos.config.file-extension}
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - dataId: redis.common.${spring.cloud.nacos.config.file-extension}
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - dataId: mq.common.${spring.cloud.nacos.config.file-extension}
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - dataId: mongo.common.${spring.cloud.nacos.config.file-extension}
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true

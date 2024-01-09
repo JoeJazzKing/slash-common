@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>slash-common</artifactId>
+        <groupId>com.heycine.slash.common</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <packaging>pom</packaging>
+    <artifactId>common-starter</artifactId>
+    <name>common-starter</name>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
+
+    <modules>
+        <module>redis-spring-boot-starter</module>
+        <module>mongo-spring-boot-starter</module>
+        <module>rocketmq-spring-boot-starter</module>
+        <module>file-spring-boot-starter</module>
+        <module>activity-spring-boot-starter</module>
+        <module>swagger-spring-boot-starter</module>
+        <module>mybatisplus-spring-boot-starter</module>
+        <module>easypoi-spring-boot-starter</module>
+        <module>basic-spring-boot-starter</module>
+        <module>monitor-spring-boot-starter</module>
+    </modules>
+
+</project>

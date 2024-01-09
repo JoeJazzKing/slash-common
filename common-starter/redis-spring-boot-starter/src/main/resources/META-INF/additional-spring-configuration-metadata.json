@@ -1,0 +1,16 @@
+{
+  "properties": [
+    {
+      "name": "heycine.redisson.host",
+      "type": "java.lang.String",
+      "description": "redis的服务器地址",
+      "defaultValue": "localhost"
+    },
+    {
+      "name": "heycine.redisson.port",
+      "type": "java.lang.Integer",
+      "description": "redis的服务器端口",
+      "defaultValue": 6379
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+# Tomcat
+server:
+  port: 21001
+
+# Spring
+spring:
+  application:
+    name: common-service
+  profiles:
+    active: local
+
+  # SpringCloud配置
+  cloud:
+    nacos:
+      # 注册中心
+#      server-addr: http://172.16.12.83:8848
+      server-addr: http://localhost:8848
+      username: nacos
+      password: nacos
+      discovery:
+        namespace: ${spring.profiles.active}
+        group: Tope
+      # 配置中心
+      config:
+        namespace: ${spring.profiles.active}
+        group: Tope
+        prefix: ${spring.application.name}
+        file-extension: yml
+        refresh-enabled: true
+        # 共享配置
+        shared-configs:
+          - dataId: application.common.${spring.cloud.nacos.config.file-extension}
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - dataId: monitor.common.${spring.cloud.nacos.config.file-extension}
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - dataId: redis.common.${spring.cloud.nacos.config.file-extension}
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - dataId: mq.common.${spring.cloud.nacos.config.file-extension}
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - dataId: mongodb.common.${spring.cloud.nacos.config.file-extension}
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - dataId: storage.common.${spring.cloud.nacos.config.file-extension}
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true

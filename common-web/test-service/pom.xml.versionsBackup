@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>common-web</artifactId>
+        <groupId>com.heycine.slash.common</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>socket-service</artifactId>
+    <name>socket-service</name>
+
+    <dependencies>
+        <!-- business模块 -->
+        <dependency>
+            <groupId>com.heycine.slash.common</groupId>
+            <artifactId>common-business</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <!-- redis-spring-boot-starter模块 -->
+        <!--<dependency>
+            <groupId>com.heycine.slash.common</groupId>
+            <artifactId>redis-spring-boot-starter</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>-->
+        <!-- swagger-spring-boot-starter模块 -->
+        <dependency>
+            <groupId>com.heycine.slash.common</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <!-- monitor-spring-boot-starter模块 -->
+        <dependency>
+            <groupId>com.heycine.slash.common</groupId>
+            <artifactId>monitor-spring-boot-starter</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <!-- websocket -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
+</project>

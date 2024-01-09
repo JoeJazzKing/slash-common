@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>common-web</artifactId>
+        <groupId>com.heycine.slash.common</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>monitor-service</artifactId>
+    <name>monitor-service</name>
+
+    <properties>
+        <spring-boot-admin.version>2.4.1</spring-boot-admin.version>
+        <prometheus.version>1.5.1</prometheus.version>
+    </properties>
+
+    <dependencies>
+        <!-- basic-spring-boot-starter模块 -->
+        <dependency>
+            <groupId>com.heycine.slash.common</groupId>
+            <artifactId>basic-spring-boot-starter</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <!-- swagger-spring-boot-starter模块 -->
+        <dependency>
+            <groupId>com.heycine.slash.common</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- SpringBoot Admin Server -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+            <version>${spring-boot-admin.version}</version>
+        </dependency>
+        <!-- Prometheus -->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <version>${prometheus.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
+</project>

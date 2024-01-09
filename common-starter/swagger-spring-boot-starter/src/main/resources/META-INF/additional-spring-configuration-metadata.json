@@ -1,0 +1,16 @@
+{
+  "properties": [
+    {
+      "name": "heycine.redisson.xxx",
+      "type": "java.lang.String",
+      "description": "xxx的描述",
+      "defaultValue": "xxx"
+    },
+    {
+      "name": "heycine.redisson.yyy",
+      "type": "java.lang.Integer",
+      "description": "yyy的描述",
+      "defaultValue": 1000
+    }
+  ]
+}
